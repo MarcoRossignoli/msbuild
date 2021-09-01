@@ -2021,13 +2021,13 @@ namespace Microsoft.Build.UnitTests
                 return File.Exists(path);
             }
 
-            public IEnumerable<TResult> EnumerateDirectories<TResult>(string path, FindPredicate predicate, FindTransform<TResult> transform)
+            public IEnumerable<TResult> EnumerateDirectories<TResult>(string path, string pattern, FindPredicate predicate, FindTransform<TResult> transform)
             {
                 IncrementEnumerations(path);
                 return Enumerable.Empty<TResult>();
             }
 
-            public IEnumerable<TResult> EnumerateFiles<TResult>(string path, FindPredicate predicate, FindTransform<TResult> transform)
+            public IEnumerable<TResult> EnumerateFiles<TResult>(string path, string pattern, FindPredicate predicate, FindTransform<TResult> transform)
             {
                 IncrementEnumerations(path);
                 return Enumerable.Empty<TResult>();
